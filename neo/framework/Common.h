@@ -73,6 +73,11 @@ extern idCVar		com_showAsyncStats;
 extern idCVar		com_showSoundDecoders;
 extern idCVar		com_makingBuild;
 extern idCVar		com_updateLoadSize;
+
+extern idCVar		com_gameHz;
+extern int			com_gameMSRate;
+extern int			com_realGameHz;
+
 extern idCVar		com_enableDebuggerServer;
 extern idCVar		com_dbgClientAdr;
 extern idCVar		com_dbgServerAdr;
