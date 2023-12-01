@@ -289,7 +289,7 @@ public:
 	// *out_userArg will be an argument you have to pass to the function, if appropriate (else NULL)
 	virtual bool				GetAdditionalFunction(FunctionType ft, FunctionPointer* out_fnptr, void** out_userArg) = 0;
 
-	virtual float				Get_com_gameMSRate(void) = 0;
+	virtual float				GetComGameMSRate(void) = 0;
 };
 
 extern idCommon *		common;
@@ -297,17 +297,17 @@ extern idCommon *		common;
 // Returns the msec the frame starts on
 ID_INLINE int FRAME_TO_MSEC(int frame)
 {
-	return (int)idMath::Rint(static_cast<float>(frame) * common->Get_com_gameMSRate());
+	return (int)idMath::Rint(static_cast<float>(frame) * common->GetComGameMSRate());
 }
 // Rounds DOWN to the nearest frame
 ID_INLINE int MSEC_TO_FRAME_FLOOR(int msec)
 {
-	return (int)idMath::Floor(static_cast<float>(msec) / common->Get_com_gameMSRate());
+	return (int)idMath::Floor(static_cast<float>(msec) / common->GetComGameMSRate());
 }
 // Rounds UP to the nearest frame
 ID_INLINE int MSEC_TO_FRAME_CEIL(int msec)
 {
-	return (int)idMath::Ceil(static_cast<float>(msec) / common->Get_com_gameMSRate());
+	return (int)idMath::Ceil(static_cast<float>(msec) / common->GetComGameMSRate());
 }
 // Aligns msec so it starts on a frame bondary
 ID_INLINE int MSEC_ALIGN_TO_FRAME(int msec)

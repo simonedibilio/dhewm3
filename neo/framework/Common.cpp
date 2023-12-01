@@ -192,7 +192,7 @@ public:
 	// NOTE: this doesn't do anything yet, but allows to add ugly mod-specific hacks without breaking the Game interface
 	virtual bool				GetAdditionalFunction(idCommon::FunctionType ft, idCommon::FunctionPointer* out_fnptr, void** out_userArg);
 
-	virtual float				Get_com_gameMSRate(void);
+	virtual float				GetComGameMSRate(void);
 
 	// DG end
 
@@ -3393,7 +3393,7 @@ bool idCommonLocal::GetAdditionalFunction(idCommon::FunctionType ft, idCommon::F
 	}
 }
 
-float idCommonLocal::Get_com_gameMSRate() {
+float idCommonLocal::GetComGameMSRate() {
 	return com_gameMSRate;
 }
 
