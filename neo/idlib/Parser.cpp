@@ -1146,6 +1146,27 @@ int idParser::Directive_define( void ) {
 			return true;
 		}
 	}
+
+
+	//UGLY HACK Stradex: workaround to have com_gameHz working without having to modify script files and avoiding new pak data
+	if (idStr::Icmp(define->name, "GAME_FPS") == 0) {
+		token = cvarSystem->GetCVarString("com_gameHz");
+	}
+	else if (idStr::Icmp(define->name, "GAME_FRAMETIME") == 0) {
+		float hackGameMsec = 1.0f / static_cast<float>(cvarSystem->GetCVarInteger("com_gameHz"));
+		char sHackMsec[64];
+		sprintf(sHackMsec, "%.3f", hackGameMsec);
+		token = static_cast<const char*>(sHackMsec);
+	}
+	else if (idStr::Icmp(define->name, "CHAINGUN_FIRE_SKIPFRAMES") == 0) {
+		int newSkipFramesVal = (int)idMath::Rint(cvarSystem->GetCVarFloat("com_gameHz")/ 7.0); //FIXME: Would be better to actually read the original value from CHAINGUN_FIRE_SKIPFRAMES instead of using 7.0 directly
+		char sHackSkipFramesVal[64];
+		sprintf(sHackSkipFramesVal, "%d", newSkipFramesVal);
+		token = static_cast<const char*>(sHackSkipFramesVal);
+	}
+	//UGLY HACK ends
+
+
 	// read the defined stuff
 	last = NULL;
 	do
