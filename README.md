@@ -39,4 +39,4 @@ Everything else - including the resolution - should be settable in the game's "s
 
 - **Mods compatibility is broken**, only games playable are the two main ones (Doom 3 and Resurrection of Evil) and The Lost Mission; for everything else (e.g.: Classic Doom 3) you'll have to rely on "vanilla" dhewm3
 - **Old save files are incompatible**
-- There *may* be a problem with the patch that slows the game down to 24 FPS after playing the game for a while (1+ hours), which was present in Stradex's version; <ins>I haven't however encountered this issue on this port after playing for a couple of hours.</ins> If you **do** come across this issue though, all you have to is 1. save the game 2. restart it
+- There *may* be a problem with the patch that slows the game down to 24 FPS after playing the game for a while (1+ hours), which was present in Stradex's version; <ins>I haven't however encountered this issue on this port after playing for a couple of hours.</ins> If you **do** come across this issue though, all you have to do is 1. save the game 2. restart it
